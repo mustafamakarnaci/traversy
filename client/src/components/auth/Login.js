@@ -24,6 +24,7 @@ const Login = () => {
                     <input type="email"
                         placeholder="Email Address"
                         name="email"
+                        value={email}
                         onChange={e => onChange(e)}
                         required />
                 </div>
@@ -33,6 +34,7 @@ const Login = () => {
                         placeholder="Password"
                         name="password"
                         minLength="6"
+                        value={password}
                         onChange={e => onChange(e)}
                     />
                 </div>
@@ -49,7 +51,7 @@ export default Login;
 
 
 
-{/* const newUser = {
+/* const newUser = {
                 name,
                 email,
                 password,
@@ -67,4 +69,4 @@ export default Login;
 
             } catch (err) {
                 console.error(err.message);
-            } */}
+            } */
