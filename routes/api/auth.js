@@ -44,7 +44,7 @@ router.post(
         try {
             let user = await User.findOne({ email });//veritabanında eşleşmeyi bul ve user'a getir
 
-            //console.log('user findeOne ', user);
+            console.log('email ', email, ' password', password);
 
             if (!user) {//user veritabanında yoksa hata ver
                 return res
