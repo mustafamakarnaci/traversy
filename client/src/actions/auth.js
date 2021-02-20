@@ -9,7 +9,8 @@ import {
     AUTH_ERROR,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
-    LOGOUT
+    LOGOUT,
+    CLEAR_PROFILE
 } from './types';
 
 
@@ -64,12 +65,12 @@ export const register = ({ name, email, password }) => async dispatch => {
 };
 
 //Login User
-export const login = ( email, password ) => async dispatch => {
+export const login = (email, password) => async dispatch => {
 
     const body = JSON.stringify({ email, password });
 
 
-    console.log('email',email, ' password', password);
+    console.log('email', email, ' password', password);
 
     const config = {
         headers: {
@@ -100,5 +101,6 @@ export const login = ( email, password ) => async dispatch => {
 
 // Logout / Clear Profile
 export const logout = () => dispatch => {
+    dispatch({ type: CLEAR_PROFILE });
     dispatch({ type: LOGOUT });
 }
