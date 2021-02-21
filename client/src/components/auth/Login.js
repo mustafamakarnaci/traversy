@@ -22,7 +22,7 @@ const Login = ({ login, isAuthenticated }) => {
     };
 
     // Redirect if logged in
-    if(isAuthenticated){
+    if (isAuthenticated) {
         return <Redirect to="/dashboard" />
     }
 
@@ -52,7 +52,7 @@ const Login = ({ login, isAuthenticated }) => {
                 <input type="submit" className="btn btn-primary" value="Login" />
             </form>
             <p className="my-1">
-                Don't have an account? <Link to="login.html">Sign Up</Link>
+                Don't have an account? <Link to="/register">Sign Up</Link>
             </p>
         </Fragment>
     )
@@ -61,7 +61,7 @@ const Login = ({ login, isAuthenticated }) => {
 
 Login.propTypes = {
     login: PropTypes.func.isRequired,
-    isAuthenticated:PropTypes.bool.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
