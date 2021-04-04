@@ -1,0 +1,7 @@
+{
+    "mongoURI": "mongodb+srv://musti123:musti123@devconnector.siqbe.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtsecret": "secrettoken",
+    "githubClientId": "d296b38613e948da0024",
+    "githubSecret": "66ad9624aa50e0e290243522a3fe1fbb27c5df46"
+  }
+  

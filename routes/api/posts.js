@@ -159,11 +159,15 @@ router.put('/unlike/:id', auth, async (req, res) => {
 // @route   POST api/posts/comment/:id
 // @desc    Comment on a post 
 // @access  Private
-router.post('/comment/:id', [auth,
+router.post('/comment/:id',
     [
-        check('text', 'Text is required').not().isEmpty(),
-    ]
-],
+        auth,
+        [
+            check('text', 'Text is required')
+                .not()
+                .isEmpty(),
+        ]
+    ],
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -222,7 +226,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
         post.comments.splice(removeIndex, 1);
 
         await post.save();
-        
+
         res.json(post);
 
     } catch (err) {
